@@ -1,5 +1,5 @@
 -- ==========================================================================
--- PocketOS main — Retro Gadgets CPU entry point.
+-- PocketOS cpu0 — Retro Gadgets CPU entry point (standard CPU script name).
 --
 -- Add every file in src/ to your gadget as a Code asset named after the file
 -- (e.g. "hal" for hal.lua), set this file as the CPU Source, and wire the

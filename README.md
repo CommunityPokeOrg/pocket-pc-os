@@ -5,7 +5,7 @@ A Pocket PC–style operating system for [Retro Gadgets](https://store.steampowe
 ## Architecture
 
 ```
-main.lua         CPU entry point: update(), eventChannel1, boot, input routing
+cpu0.lua         CPU entry point: update(), eventChannel1, boot, input routing
 shell.lua        Desktop icons, taskbar (Start + window buttons + clock), Start menu
 wm.lua           Window manager: focus/z-order, titlebar drag, close box, app dispatch
 appbase.lua      App registry used by the desktop and Start menu
@@ -41,7 +41,7 @@ Optional but supported: **FlashMemory** (file + settings persistence; without it
 ### Wiring
 
 1. Add every file under `src/` as a **Code** asset named after the file minus the extension (`hal`, `theme`, `gfx`, `keymap`, `fs`, `wm`, `shell`, `appbase`, `app_terminal`, `app_files`, `app_paint`, `app_settings`, `app_about`).
-2. Set `main.lua` as the CPU's **Source**.
+2. Set `cpu0.lua` as the CPU's **Source**.
 3. Point the CPU's **EventChannel 1** at `KeyboardChip0` in the Multitool (the code also attempts `cpu.EventChannels[1] = kbd` at boot, but the Multitool wiring is authoritative).
 4. Power on.
 

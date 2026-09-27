@@ -15,7 +15,7 @@ end
 local srcs = {
   "hal", "theme", "gfx", "keymap", "fs", "wm", "shell", "appbase",
   "app_terminal", "app_files", "app_paint", "app_settings", "app_about",
-  "main",
+  "cpu0",
 }
 for _, n in ipairs(srcs) do
   local f, err = loadfile("src/" .. n .. ".lua")
@@ -33,7 +33,7 @@ function require(name)
   return loaded[name]
 end
 
-dofile("src/main.lua")
+dofile("src/cpu0.lua")
 
 ok(type(update) == "function", "update() defined")
 ok(type(eventChannel1) == "function", "eventChannel1 defined")
